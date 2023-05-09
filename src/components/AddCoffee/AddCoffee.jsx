@@ -1,16 +1,40 @@
 const AddCoffee = () => {
+  
   const handleAddCoffe = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const chef = form.chef.value;
+    const quantity = form.quantity.value;
     const supplier = form.supplier.value;
     const taste = form.taste.value;
     const category = form.category.value;
     const details = form.details.value;
     const photo = form.photo.value;
 
-    console.log({ name, chef, supplier, taste, category, details, photo });
+    const coffeeInfo = {
+      name,
+      quantity,
+      supplier,
+      taste,
+      category,
+      details,
+      photo,
+    };
+
+    // Data POST usign api
+    fetch("http://localhost:3000/coffee", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(coffeeInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+
+    // console.log({ name, chef, supplier, taste, category, details, photo });
   };
 
   return (
@@ -44,14 +68,14 @@ const AddCoffee = () => {
           <div className='mb-4'>
             <label
               className='block text-gray-700 font-bold mb-2'
-              htmlFor='chef'
+              htmlFor='quantity'
             >
-              Chef
+              Quantity
             </label>
             <input
               className=' appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-              id='chef'
-              name='chef'
+              id='quantity'
+              name='quantity'
               type='text'
               placeholder='Enter coffee chef'
               required
