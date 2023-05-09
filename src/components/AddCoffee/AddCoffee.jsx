@@ -1,5 +1,4 @@
 const AddCoffee = () => {
-  
   const handleAddCoffe = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -31,7 +30,10 @@ const AddCoffee = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data.insertedId) {
+          alert("Coffee added successfully!");
+        }
+        form.reset();
       });
 
     // console.log({ name, chef, supplier, taste, category, details, photo });

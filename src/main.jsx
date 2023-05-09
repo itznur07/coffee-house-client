@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import AddCoffee from "./components/AddCoffee/AddCoffee.jsx";
+import Coffee from "./components/Coffee/Coffee.jsx";
 import UpdateCoffee from "./components/UpdateCoffee/UpdateCoffee.jsx";
-
 
 const router = createBrowserRouter([
   {
@@ -18,6 +18,11 @@ const router = createBrowserRouter([
   {
     path: "/updateCoffee",
     element: <UpdateCoffee></UpdateCoffee>,
+  },
+  {
+    path: "/coffee",
+    element: <Coffee></Coffee>,
+    loader: () => fetch('http://localhost:3000/coffee')
   },
 ]);
 
