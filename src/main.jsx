@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import AddCoffee from "./components/AddCoffee/AddCoffee.jsx";
 import UpdateCoffee from "./components/UpdateCoffee/UpdateCoffee.jsx";
-import "./index.css";
+
 
 const router = createBrowserRouter([
   {
