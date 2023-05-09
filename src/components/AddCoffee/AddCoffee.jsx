@@ -1,4 +1,18 @@
 const AddCoffee = () => {
+  const handleAddCoffe = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const chef = form.chef.value;
+    const supplier = form.supplier.value;
+    const taste = form.taste.value;
+    const category = form.category.value;
+    const details = form.details.value;
+    const photo = form.photo.value;
+
+    console.log({ name, chef, supplier, taste, category, details, photo });
+  };
+
   return (
     <div className='flex flex-col space-y-5 items-center justify-center h-screen'>
       <div>
@@ -7,7 +21,7 @@ const AddCoffee = () => {
         </h1>
       </div>
       <form
-        // onSubmit={handleUpdate}
+        onSubmit={handleAddCoffe}
         className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'
       >
         <div className='grid grid-cols-2 gap-5'>
@@ -47,14 +61,14 @@ const AddCoffee = () => {
           <div className='mb-4'>
             <label
               className='block text-gray-700 font-bold mb-2'
-              htmlFor='Supplier'
+              htmlFor='supplier'
             >
               Supplier
             </label>
             <input
               className=' appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-              id='Supplier'
-              name='Supplier'
+              id='supplier'
+              name='supplier'
               type='text'
               placeholder='Enter coffee supplier'
               required
@@ -63,14 +77,14 @@ const AddCoffee = () => {
           <div className='mb-4'>
             <label
               className='block text-gray-700 font-bold mb-2'
-              htmlFor='text'
+              htmlFor='taste'
             >
               Taste
             </label>
             <input
               className=' appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-              id='Taste'
-              name='Taste'
+              id='taste'
+              name='taste'
               type='text'
               placeholder='Enter coffee taste'
               required
@@ -79,14 +93,14 @@ const AddCoffee = () => {
           <div className='mb-4'>
             <label
               className='block text-gray-700 font-bold mb-2'
-              htmlFor='Category'
+              htmlFor='category'
             >
               Category
             </label>
             <input
               className=' appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-              id='Category'
-              name='Category'
+              id='category'
+              name='category'
               type='text'
               placeholder='Enter coffee cagegory'
               required
@@ -95,14 +109,14 @@ const AddCoffee = () => {
           <div className='mb-4'>
             <label
               className='block text-gray-700 font-bold mb-2'
-              htmlFor='Details'
+              htmlFor='details'
             >
               Details
             </label>
             <input
               className=' appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-              id='Details'
-              name='Details'
+              id='details'
+              name='details'
               type='text'
               placeholder='Enter coffee details'
               required
@@ -110,13 +124,13 @@ const AddCoffee = () => {
           </div>
         </div>
         <div className='mb-4'>
-          <label className='block text-gray-700 font-bold mb-2' htmlFor='Photo'>
+          <label className='block text-gray-700 font-bold mb-2' htmlFor='photo'>
             Photo
           </label>
           <input
             className=' appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-            id='Photo'
-            name='Photo'
+            id='photo'
+            name='photo'
             type='text'
             placeholder='Enter photo url'
             required
