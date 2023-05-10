@@ -1,6 +1,6 @@
 import React from "react";
 import { FaEdit, FaEye, FaTrash } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Coffee = () => {
   const coffees = useLoaderData();
@@ -66,9 +66,11 @@ const CoffeeCard = ({ coffee }) => {
         >
           <FaTrash />
         </span>
-        <span className='cursor-pointer text-red-500'>
-          <FaEdit />
-        </span>
+        <Link to={`/updateCoffee/${coffee?._id}`}>
+          <span className='cursor-pointer text-red-500'>
+            <FaEdit />
+          </span>
+        </Link>
       </div>
       {/* icon sec ends here */}
     </div>
