@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const AddCoffee = () => {
+  const navigate = useNavigate();
+
   const handleAddCoffe = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -34,6 +38,7 @@ const AddCoffee = () => {
           alert("Coffee added successfully!");
         }
         form.reset();
+        navigate("/coffee");
       });
   };
 
