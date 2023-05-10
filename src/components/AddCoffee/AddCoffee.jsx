@@ -25,13 +25,16 @@ const AddCoffee = () => {
     };
 
     // Data POST usign api
-    fetch("http://localhost:3000/coffee", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(coffeeInfo),
-    })
+    fetch(
+      "https://cofee-house-server-nuruddinmd509-gmailcom.vercel.app/coffee",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(coffeeInfo),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {

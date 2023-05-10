@@ -18,12 +18,12 @@ const router = createBrowserRouter([
   {
     path: "/updateCoffee/:id",
     element: <UpdateCoffee></UpdateCoffee>,
-    loader: ({ params }) => fetch(`http://localhost:3000/coffee/${params.id}`),
+    loader: ({ params }) => fetch(`https://cofee-house-server-nuruddinmd509-gmailcom.vercel.app/coffee/${params.id}`),
   },
   {
     path: "/coffee",
     element: <Coffee></Coffee>,
-    loader: () => fetch("http://localhost:3000/coffee"),
+    loader: () => fetch("https://cofee-house-server-nuruddinmd509-gmailcom.vercel.app/coffee"),
   },
 ]);
 

@@ -27,13 +27,16 @@ const UpdateCoffee = () => {
     };
 
     // Data Update usign api
-    fetch(`http://localhost:3000/coffee/${loadedData._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(coffeeInfo),
-    })
+    fetch(
+      `https://cofee-house-server-nuruddinmd509-gmailcom.vercel.app/coffee/${loadedData._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(coffeeInfo),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
