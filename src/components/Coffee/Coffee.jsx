@@ -23,12 +23,15 @@ const Coffee = () => {
 
 const CoffeeCard = ({ coffee }) => {
   const handleDelete = (id) => {
-    fetch(`http://localhost:3000/coffee/${id}`, {
-      method: "DELETE",
-      headers: {
-        "content-type": "application/json",
-      },
-    })
+    fetch(
+      `https://cofee-house-server-nuruddinmd509-gmailcom.vercel.app/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
