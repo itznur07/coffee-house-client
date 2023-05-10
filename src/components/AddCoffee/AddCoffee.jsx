@@ -35,8 +35,6 @@ const AddCoffee = () => {
         }
         form.reset();
       });
-
-    // console.log({ name, chef, supplier, taste, category, details, photo });
   };
 
   return (
