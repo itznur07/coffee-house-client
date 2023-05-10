@@ -22,6 +22,22 @@ const Coffee = () => {
 };
 
 const CoffeeCard = ({ coffee }) => {
+  const handleDelete = (id) => {
+    fetch(`http://localhost:3000/coffee/${id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          alert("Coffee Deleted successfully!");
+          location.reload();
+        }
+      });
+  };
+
   return (
     <div className='flex items-center justify-between p-5 shadow-lg rounded-lg'>
       {/* img sec here */}
@@ -45,7 +61,7 @@ const CoffeeCard = ({ coffee }) => {
           <FaEye />
         </span>
         <span
-          // onClick={() => handleDelete(user?._id)}
+          onClick={() => handleDelete(coffee?._id)}
           className='cursor-pointer text-red-500'
         >
           <FaTrash />
